@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +21,14 @@ public class DepartmentController {
     public DepartmentService service;
 
     @GetMapping
-    public ResponseEntity<List<Department>>getDepts(){
+    public ResponseEntity<List<Department>> getDepts() {
         return new ResponseEntity<List<Department>>
-                (service.getDepts(),HttpStatus.OK);
+                (service.getDepts(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Department> getDept(@PathVariable("id") int id) {
-        return new ResponseEntity<Department>(service.getDept(id),HttpStatus.OK);
+        return new ResponseEntity<Department>(service.getDept(id), HttpStatus.OK);
     }/*
 	@PostMapping
 	public String addDept(@RequestBody Department department) {

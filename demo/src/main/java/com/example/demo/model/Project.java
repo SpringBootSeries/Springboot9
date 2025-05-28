@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-g
+
 
 import java.util.List;
 

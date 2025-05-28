@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 
-
 import java.util.List;
 
 import org.jvnet.hk2.annotations.Service;
@@ -24,8 +23,8 @@ public class DepartmentService {
         return repo.findAll();
     }
 
-    public Department getDept( int id) {
-        if(repo.findById(id).isEmpty()) {
+    public Department getDept(int id) {
+        if (repo.findById(id).isEmpty()) {
             throw new EntityNotFoundException("Department Not Found");
         }
         return repo.findById(id).get();
@@ -33,7 +32,7 @@ public class DepartmentService {
 
 
     public String addDept(Department department) {
-        if(repo.findById(department.getId()).isPresent()) {
+        if (repo.findById(department.getId()).isPresent()) {
             throw new DuplicateKeyException("The department id is already availabale");
 
         }
@@ -41,8 +40,6 @@ public class DepartmentService {
         return "New Department added";
 
     }
-
-
 
 
 }
